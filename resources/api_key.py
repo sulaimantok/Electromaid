@@ -8,7 +8,7 @@ def require_appkey(view_function):
         #with open('/home/sulaiman/Documents/Kuliah/Semester 5/RPL/elektromaid/resources/api.key', 'r') as apikey:
         with open('/app/resources/api.key', 'r') as apikey:
             key=apikey.read().replace('\n', '')
-            #key = "eiWee8ep9due4deeshoa8Peichai8Eih"
+            
         #if request.args.get('key') and request.args.get('key') == key:
         if request.headers.get('x-api-key') and request.headers.get('x-api-key') == key:
             return view_function(*args, **kwargs)
